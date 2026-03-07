@@ -1,0 +1,150 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+    int a, b;
+    a = 10;
+    b = 20;
+
+    // Logical Operator &&
+    if(b< 30 && a> 5){
+        cout<< "condition fpr AND operator is true \n";
+    }
+
+    // Logical operator ||
+    if(a>5 || b>15){
+        cout<<"condition for OR operator is true \n";
+    }
+    
+    // Logical ! operator
+    if(!(a>10)){
+        cout << "Condition for NOT operator is true\n";
+    }
+
+    // Unary Operator
+    // Increment Operator
+
+    a++;  //post increment
+    cout<< "After post increment operator value of a is "<< a<<endl;
+
+    ++a; // pre increment
+    cout<< "After pre increment operator value of a is "<< a<<endl;
+
+    // Decrement Operator
+
+    b--;  // post decrement
+    cout<<"After post decrement operator value of b is "<< b << endl;
+
+    --b; //pre decrement
+    cout<<"After pre decrement operator value of b is "<< b << endl;
+
+
+    // Ternary Operator
+    int min = a < b ? a : b;
+    cout << min<< endl;
+
+
+    // Assignment Operator
+    a += 5;
+    cout<< "a += 5 is "<< a<<endl;
+
+    b *= 2;
+    cout << "b *= 2 is " << b << endl;
+
+    a %= 2;
+    cout<< "a %=2 is " << a << endl;
+
+}
+
+
+
+
+
+
+#include<iostream>
+using namespace std;
+
+// Pass By Value
+// int swap(int , int);
+// int main(){
+    
+//     int a,b,c;
+//     cout<<"enter the values for a and b\n";
+
+//     cin>>a>>b;
+
+//     cout<<"before swapping values of a and b are "<< a << " "<< b <<endl;
+
+//     c=swap(a,b);
+//     cout<<"after swapping values of a and b are "<<a << " "<< b <<endl;
+
+
+// }
+// int swap(int x,int y){
+//     int temp = x;
+//     x = y;
+//     y = temp;
+
+//     cout<<"value of x = "<< x <<"  "<<"value of y = "<< y <<endl;
+//     return x,y;
+// }
+
+
+
+
+//2
+
+// Pass By Address
+void swap(int *, int *);
+int main(){
+
+    int a,b,c;
+    cout<<"Enter values for a and b: "<<endl;
+    cin >> a >> b;
+
+    cout << "Values of a and b before swapping are: " << a << " "<< b << endl;
+
+    swap(&a, &b);
+    cout <<" values of a and b after swapping: " << a << " " << b << endl;
+}
+
+void swap(int* x, int * y){
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+
+    // cout<<"value of x = "<< *x <<"  "<<"value of y = "<< *y <<endl;
+    
+}
+
+
+//3
+
+
+
+
+
+
+
+#include<iostream>
+using namespace std;
+  
+void swap(int & ,int &);
+int main(){
+    int a ,b,c;
+    cout<<"enter values of a and b \n";
+    cin>>a>>b;
+
+    cout<<"before calling function\n"<< a <<" " << b << endl;
+    swap(a,b);
+
+    cout<<"After calling function "<<a<<"  "<<b<<endl;
+
+}
+void swap(int &x ,int &y){
+    int temp =x;
+    x = y ;
+    y =  temp ;
+
+    cout<<"in function value of x = "<< x <<"  "<<"value of y = "<< y <<endl;
+}
