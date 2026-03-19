@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+        function sendResponse(){
+            var zhttp = new XMLHttpRequest();
+
+            const param = {
+                title : document.querySelector('#title').value,
+                userId : document.querySelector('#UID').value,
+            }
+
+
+            zhttp.onreadystatechange = function(){
+                if(this.readyState==4 && this.status == 200){
+                    document.getElementById("d1").innerHTML = this.responseText;
+                    console.log("data posted successfully");
+                }
+                console.log("error found")
+            };
+
+            zhttp.open("POST" , "https://jsonplaceholder.typicode.com/todos", true);
+             zhttp.setRequestHeader('content-type', 'application/json')
+
+
+             zhttp.send(JSON.stringify(param));
+
+        }
+    </script>
+
+    <h2> Enter Data</h2>
+    <lable for="title">Title: </lable>
+    <input type="text" id="title" name="title">
+
+    <label for="UID">User ID</label>
+    <input type="number" id="UID" name="user Id">
+
+    <button id="btn" onclick="sendResponse()">Submit</button>
+    <div id="d1"></div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://code.jquery.com/jquery-4.0.0.js">
+
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#b1").click(function(){
+                var number = $("#num").val();
+                var fact = 1;
+
+                if(number <= 0){
+                    fact = 1;
+                }
+                else{
+                    for(var i=1; i<=number; i++){
+                        fact = fact * i;
+                    }
+                }
+                $("#p1").html(fact);
+            })
+        })
+    </script>
+</head>
+<body>
+    <input id="num" type="Number">Enter number
+     <button id="b1">show</button>
+     <p id="p1"></p>
+</body>
+</html>

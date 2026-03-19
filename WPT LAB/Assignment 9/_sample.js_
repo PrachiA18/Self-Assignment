@@ -1,0 +1,12 @@
+let d = "welcome to node ja"
+console.log(d);
+console.log(d);
+let d1 = "Welcome to node js"
+console.log(d1);
+12+ 13
+function add(a,b)(){ return (a+b)}
+function add(a,b) {return (a+b)}
+add(20, 30)
+25*50
+save sample.js
+save "./sample.js"

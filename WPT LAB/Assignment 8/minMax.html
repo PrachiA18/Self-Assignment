@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Min and Max length</title>
+
+    <script>
+
+        function validate(){
+            let element =document.getElementById("t1");
+            console.log(element.checkValidity());
+
+            if(element.checkValidity()){
+                document.getElementById("p1").innerText = "OK"
+            }
+            else{
+                document.getElementById("p1").innerText = element.validationMessage;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <form>
+    <input type="text" id="t1" required minlength="6" maxlength="20">
+    <button id="b1" onclick="validate()">Submit</button>
+    <p id="p1"></p>
+    </form>
+</body>
+</html>

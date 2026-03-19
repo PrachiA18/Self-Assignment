@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    <title>JSON Data</title>
+</head>
+<body>
+    <script>
+        function validate(){
+            let name, password;
+            let data = document.forms["fname"]["sname"].value;
+            if(data.trim()==""|| data.length < 2 ||  !isNaN(data)){
+                alert("Please enter valid username");
+                document.forms["fname"]["sname"].focus;
+                name = false;
+            }
+            else{
+                name = true;
+            }
+
+            let pass = document.forms.fname.spass.value;
+            if(pass.length < 8 || pass.length > 12 ){
+                alert("Username should be between 8 to 12 characters");
+                document.forms.fname.spass.focus;
+                password = false;
+            }
+            else{
+                password = true;
+            }
+            // 
+            //alert(name)
+               // alert(name && pass);
+            if(name && password)
+             {//alert(pass);
+                if(data == "iet" && pass == "iet12345678")
+          return true;
+          else
+          {alert("Wrong Data ")
+          return false;
+          }
+             }
+            else
+            return false;
+        }
+
+        function data(){
+            aler("data")
+          if(data == "iet" && pass == "iet12345678")
+          return true;
+          else
+          return false;
+        }
+    </script>
+    <form name="fname" onsubmit="return validate()" action="Home.html">
+        Username<input type="text" name="sname">
+        Password <input type="password" name="spass">
+        <button type="submit" value="submit">submit</button>
+    </form>
+    
+    
+</body>
+</html>

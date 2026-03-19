@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Birthdate</title>Birthdate
+    <script>
+        let d = new Date();
+        console.log(d);
+        console.log(d.getFullYear());
+        console.log(d.getUTCDate());
+
+        function birthDate() {
+
+            let d2 = document.getElementById("d1").value;
+            let birth = new Date(d2);
+            let d3 =new Date();
+            let age = d3.getFullYear() - birth.getFullYear();
+            let m = d3.getMonth() - birth.getMonth();
+            
+
+            document.getElementById("div").innerHTML = age;
+             document.getElementById("div").innerHTML = m;
+        }
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <input type="date" id="d1">
+    <div id="div"></div><br>
+    <button onclick=birthDate()>show Age</button>
+</body>
+
+</html>

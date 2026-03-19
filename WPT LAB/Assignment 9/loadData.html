@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Loading Data using JQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+    </script>
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function(){
+            $("#b1").click(function(event){
+                $("#div1").load('animate.html');
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>Click on button to load html file</p>
+    <button id="b1" value="load data">Load Data</button>
+    <div id="div1" style="background-color: aqua;" style=" width: 250px;">
+        STAGE
+    </div>
+    
+</body>
+</html>

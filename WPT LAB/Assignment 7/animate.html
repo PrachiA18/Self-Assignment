@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-4.0.0.js">
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#b1").click(function () {
+                $("#d1").animate(
+        {
+            left: "500px",
+            height: "200px",
+            width:"200px"
+        },
+        2000,
+        "swing"
+        );
+            })
+        })
+    </script>
+    <style>
+        #d1 {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(241, 40, 157);
+            position: absolute;
+            top: 50px;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1">
+    </div>
+    <button id="b1">Start</button>
+</body>
+
+</html>

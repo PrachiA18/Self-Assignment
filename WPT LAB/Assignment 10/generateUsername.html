@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Username generation</title>
+</head>
+
+<body>
+    <input type="text" id="fname">first name
+    <input type="text" id="lname">Last name
+    <input type="date" id="age">birthdate
+    <button id="btn" onclick="generate()">Generate username</button>
+    <p id="para"></p>
+
+    <script>
+        function generate() {
+            let name = document.getElementById("fname").value;
+            let num = document.getElementById("age").value;
+            let lastName = document.getElementById("lname").value;
+
+            let firstName = name[0] + name[1];
+            let laName = lastName[lastName.length - 2] + lastName[lastName.length - 1];
+
+
+            let birthYear = new Date(num).getFullYear();
+            let currentYear = new Date().getFullYear();
+            let age = currentYear - birthYear;
+
+
+
+            passwordData = firstName + age + laName;
+
+
+
+            document.getElementById("para").innerText = passwordData;
+
+        }
+
+
+    </script>
+</body>
+
+</html>
