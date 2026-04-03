@@ -1,0 +1,14 @@
+{
+  "match": "India vs Australia",
+  "overs": 20,
+  "team1": {
+    "name": "India",
+    "runs": 180,
+    "wickets": 5
+  },
+  "team2": {
+    "name": "Australia",
+    "runs": 150,
+    "wickets": 6
+  }
+}

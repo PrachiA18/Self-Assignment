@@ -1,0 +1,31 @@
+{
+  "match_details": {
+    "match_id": "RCBvsMI001",
+    "team1": "RCB",
+    "team2": "MI",
+    "venue": "Mumbai",
+    "status": "Live"
+  },
+  "batting_scorecard": [
+    {
+      "player": "AB deliviers",
+      "runs": 45,
+      "balls": 30
+    },
+    {
+      "player": "Virat Kohli",
+      "runs": 60,
+      "balls": 50
+    },
+    {
+      "player": "Rajat patidar",
+      "runs": 25,
+      "balls": 15
+    }
+  ],
+  "total_score": {
+    "runs": 130,
+    "wickets": 2,
+    "overs": 15.2
+  }
+}
