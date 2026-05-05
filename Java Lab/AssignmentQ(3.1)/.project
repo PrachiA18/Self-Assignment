@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Q4Assignment</name>
+	<comment></comment>
+	<projects>
+		<project>Assignment1</project>
+		<project>Assignment2</project>
+		<project>Assignment3</project>
+		<project>Assignment4</project>
+		<project>ClassInherit.java</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+</projectDescription>

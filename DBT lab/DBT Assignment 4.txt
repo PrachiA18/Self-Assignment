@@ -1,0 +1,1109 @@
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| company            |
+| information_schema |
+| mydb               |
+| mysql              |
+| performance_schema |
+| sys                |
+| testdb             |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> use testdb
+Database changed
+mysql> show tables;
++---------------------+
+| Tables_in_testdb    |
++---------------------+
+| a                   |
+| activity            |
+| agent               |
+| airline_seats       |
+| andor               |
+| atm                 |
+| b                   |
+| bank                |
+| bankloan            |
+| batch_schedule      |
+| betweensalary       |
+| bitwise             |
+| blanktablea         |
+| blanktableb         |
+| blog                |
+| bonus               |
+| books               |
+| brands              |
+| bus_stops           |
+| cafe                |
+| candidate           |
+| cardpayments        |
+| cars                |
+| cashpayments        |
+| categories          |
+| category            |
+| city                |
+| classandsubjects    |
+| client              |
+| cnumbers            |
+| coalesce            |
+| comments            |
+| company             |
+| countnulls          |
+| countnumbers        |
+| cricketwinnerteam   |
+| customer            |
+| customers           |
+| demodept1           |
+| demodept2           |
+| dept                |
+| dept1               |
+| dhl                 |
+| docs                |
+| doctor              |
+| doctorvisits        |
+| dummy               |
+| duplicate           |
+| emp                 |
+| emp1                |
+| emp2                |
+| emp_attendance      |
+| emp_cards           |
+| emp_phone           |
+| empj                |
+| envelope            |
+| facebook            |
+| fedex               |
+| food                |
+| food_category_tags  |
+| food_items          |
+| fromstoreorders     |
+| fruits              |
+| fullname            |
+| hall_ticket         |
+| hobby               |
+| ipl                 |
+| item                |
+| job_list            |
+| key_parts           |
+| labtestlist         |
+| leading_zeroes      |
+| leadtable           |
+| licence             |
+| linkedin            |
+| location            |
+| managers            |
+| mass_table          |
+| medicinelist        |
+| menucard            |
+| missingnumbers      |
+| nearest             |
+| new                 |
+| newbooks            |
+| null1               |
+| null2               |
+| nullif              |
+| numberstring        |
+| onlineorders        |
+| ord                 |
+| order1              |
+| order_items         |
+| orderdetails        |
+| orders              |
+| overlapping_dates   |
+| overtime            |
+| patient             |
+| phonecall           |
+| pivot_table         |
+| plumber             |
+| plumber_service_map |
+| points              |
+| population          |
+| price               |
+| product             |
+| product_sales       |
+| products            |
+| pune_metro_stations |
+| quarterly_revenue   |
+| r                   |
+| r1                  |
+| r2                  |
+| races               |
+| regexpr             |
+| repeatingnumbers    |
+| replacedept         |
+| reservations        |
+| revenue             |
+| rockets             |
+| room_assigned       |
+| room_staff          |
+| rooms               |
+| runners             |
+| runningserver       |
+| sales               |
+| sales1              |
+| sales_channel       |
+| salespeople         |
+| salesperson         |
+| salgrade            |
+| security            |
+| server              |
+| service             |
+| seta                |
+| setb                |
+| shop                |
+| softdrink           |
+| sort                |
+| sourcecity          |
+| sourcenames         |
+| stadium             |
+| stages              |
+| states              |
+| station             |
+| status              |
+| stocks              |
+| stringnumber        |
+| student             |
+| swapcity            |
+| tablea              |
+| tableaa             |
+| tableb              |
+| tablebb             |
+| targetcity          |
+| targetnames         |
+| tasks               |
+| teams               |
+| temp1               |
+| trainers            |
+| trains              |
+| traintimetable      |
+| transactions        |
+| unpivot_table       |
+| ups                 |
+| vote_response       |
+| votes               |
+| warehouse           |
+| x                   |
+| year_of_service     |
+| yearly_revenue      |
+| years               |
+| z                   |
++---------------------+
+172 rows in set (0.01 sec)
+
+mysql> SELECT COUNT(*) FROM emp;
++----------+
+| COUNT(*) |
++----------+
+|       30 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT MAX(sal), MIN(sal)
+    -> FROM emp;
++----------+----------+
+| MAX(sal) | MIN(sal) |
++----------+----------+
+|     5000 |      800 |
++----------+----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COUNT(*)
+    -> FROM emp
+    -> WHERE sal > 3000;
++----------+
+| COUNT(*) |
++----------+
+|        4 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT deptno, COUNT(*)
+    -> FROM emp
+    -> GROUP BY deptno;
++--------+----------+
+| deptno | COUNT(*) |
++--------+----------+
+|     10 |        5 |
+|     20 |        8 |
+|     30 |       12 |
+|     50 |        3 |
+|     60 |        2 |
++--------+----------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT *
+    -> FROM emp
+    -> WHERE sal = (SELECT MAX(sal) FROM emp)
+    ->    OR sal = (SELECT MIN(sal) FROM emp);
++-------+-------+--------+----------------+------+------------+------+------+--------+---------+------------+-----------+------------+----------+
+| EMPNO | ENAME | GENDER | JOB            | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME  | PWD       | PHONE      | isActive |
++-------+-------+--------+----------------+------+------------+------+------+--------+---------+------------+-----------+------------+----------+
+|  7369 | SMITH | M      | CLERK          | 7902 | 1980-12-17 |  800 | NULL |     20 |       2 | TRITONE    | a12recmpm | 7032300023 |        0 |
+|  7839 | KING  | M      | PRESIDENT      | NULL | 1981-11-17 | 5000 | NULL |     10 |       1 | KING       | r50mpm    | 7132300081 |        1 |
+|  7840 | FRED  | M      | vice PRESIDENT | 7839 | 1983-08-09 | 5000 | NULL |     20 |       1 | SAND STONE | a12recmpm | NULL       |        1 |
++-------+-------+--------+----------------+------+------------+------+------+--------+---------+------------+-----------+------------+----------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT job, SUM(sal)
+    -> FROM emp
+    -> GROUP BY job;
++---------------------+----------+
+| job                 | SUM(sal) |
++---------------------+----------+
+| Compliance officers |     5250 |
+| Public Relation     |     3500 |
+| CLERK               |    11000 |
+| SALESMAN            |     9525 |
+| MANAGER             |    13675 |
+| ANALYST             |     7750 |
+| PRESIDENT           |     5000 |
+| vice PRESIDENT      |     6000 |
+| Network             |     2000 |
++---------------------+----------+
+9 rows in set (0.00 sec)
+
+mysql> SELECT deptno, MAX(sal)
+    -> FROM emp
+    -> GROUP BY deptno;
++--------+----------+
+| deptno | MAX(sal) |
++--------+----------+
+|     10 |     5000 |
+|     20 |     5000 |
+|     30 |     4150 |
+|     50 |     1750 |
+|     60 |     2000 |
++--------+----------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT job, AVG(sal)
+    -> FROM emp
+    -> GROUP BY job;
++---------------------+-----------+
+| job                 | AVG(sal)  |
++---------------------+-----------+
+| Compliance officers | 1750.0000 |
+| Public Relation     | 1750.0000 |
+| CLERK               | 1571.4286 |
+| SALESMAN            | 1587.5000 |
+| MANAGER             | 2735.0000 |
+| ANALYST             | 2583.3333 |
+| PRESIDENT           | 5000.0000 |
+| vice PRESIDENT      | 3000.0000 |
+| Network             | 2000.0000 |
++---------------------+-----------+
+9 rows in set (0.00 sec)
+
+mysql> SELECT COUNT(*)
+    -> FROM emp
+    -> WHERE deptno = 20;
++----------+
+| COUNT(*) |
++----------+
+|        8 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COUNT(*)
+    -> FROM emp
+    -> WHERE deptno = 10 AND job = 'MANAGER';
++----------+
+| COUNT(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COUNT(*)
+    -> FROM emp
+    -> WHERE deptno = 20 AND comm IS NULL;
++----------+
+| COUNT(*) |
++----------+
+|        8 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT e.ename
+    -> FROM emp e
+    -> JOIN dept d ON e.deptno = d.deptno
+    -> WHERE d.dname = 'ACCOUNTING'
+    -> AND e.sal = (
+    ->   SELECT MAX(e2.sal)
+    ->   FROM emp e2
+    ->   JOIN dept d2 ON e2.deptno = d2.deptno
+    ->   WHERE d2.dname = 'ACCOUNTING'
+    -> );
++-------+
+| ename |
++-------+
+| KING  |
++-------+
+1 row in set (0.00 sec)
+
+mysql> SELECT *
+    -> FROM emp
+    -> WHERE sal < (
+    ->   SELECT AVG(sal)
+    ->   FROM emp
+    ->   WHERE job = 'MANAGER'
+    -> );
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+| EMPNO | ENAME    | GENDER | JOB                 | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME    | PWD        | PHONE      | isActive |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+|  6001 | GITA     | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | GITA         | sales@2017 | NULL       |        1 |
+|  6129 | VRUSHALI | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | VRUSHALI     | PUN@8877   | NULL       |        1 |
+|  6473 | SHARMIN  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | SHARMIN      | a12recmpm  | NULL       |        1 |
+|  6781 | BANDISH  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | BANDISH      | a12recmpm  | NULL       |        1 |
+|  7369 | SMITH    | M      | CLERK               | 7902 | 1980-12-17 |  800 | NULL |     20 |       2 | TRITONE      | a12recmpm  | 7032300023 |        0 |
+|  7421 | THOMAS   | M      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     10 |       1 | THOMAS       | r50mpm     | 7032300011 |        0 |
+|  7499 | ALLEN    | M      | SALESMAN            | 7698 | 1981-02-20 | 1600 |  300 |     30 |       4 | ALWAYS TESTE | sales@2017 | 7032300096 |        1 |
+|  7521 | WARD     | M      | SALESMAN            | 7698 | 1981-02-22 | 1250 |  500 |     30 |       1 | WARD         | sales@2017 | 7132300034 |        1 |
+|  7654 | MARTIN   | M      | SALESMAN            | 7698 | 1981-09-28 | 1250 | 1400 |     30 |       6 | LIFE RACER   | sales@2017 | 7132300050 |        1 |
+|  7782 | CLARK    | M      | MANAGER             | 7839 | 1981-06-09 | 2450 | NULL |     10 |       3 | CLARK        | r50mpm     | 7032300001 |        1 |
+|  7844 | TURNER   | M      | SALESMAN            | 7698 | 1981-09-08 | 1500 |    0 |     30 |       5 | SAND DUST    | sales@2017 | NULL       |        1 |
+|  7876 | ADAMS    | M      | CLERK               | 7788 | 1983-01-12 | 1100 | NULL |     20 |       1 | CRAZY ANYONE | a12recmpm  | 7132300086 |        1 |
+|  7888 | Ruhan    | M      | Network             | 7888 | 1983-08-09 | 2000 | NULL |     60 |       1 | Ruhan        | BRD@1122   | NULL       |        1 |
+|  7889 | Neel     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 1000 | NULL |     60 |       0 | Neel         | BRD@1122   | NULL       |        1 |
+|  7900 | JAMES    | M      | CLERK               | 7698 | 1981-12-03 |  950 | NULL |     30 |       2 | CRAZY LEADER | sales@2017 | 7132300042 |        1 |
+|  7920 | GRASS    | M      | SALESMAN            | 7919 | 1980-02-14 | 2575 | 2700 |     30 |       5 | GRASS        | sales@2017 | NULL       |        1 |
+|  7934 | MILLER   | M      | CLERK               | 7782 | 1982-01-23 | 1300 | 1300 |     10 |       2 | QUARTERNOTE  | r50mpm     | 7132300055 |        0 |
+|  7945 | AARUSH   | M      | SALESMAN            | 7902 | 1980-02-14 | 1350 | 2700 |     30 |    NULL | AARUSH       | ABCDEF     | NULL       |        0 |
+|  7949 | ALEX     | M      | MANAGER             | 7698 | 1982-01-24 | 1250 |  500 |     30 |       5 | QUARTERREST  | sales@2017 | 7156567183 |        1 |
+|  8433 | NATASHA  | F      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | NATASHA      | sales@2017 | NULL       |        1 |
+|  9400 | SANGITA  | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SANGITA      | NULL       | NULL       |        1 |
+|  9473 | SUPRIYA  | F      | ANALYST             | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SUPRIYA      | XYZ@1234   | NULL       |        1 |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+22 rows in set (0.00 sec)
+
+mysql> SELECT deptno, job, AVG(sal * 12)
+    -> FROM emp
+    -> GROUP BY deptno, job;
++--------+---------------------+---------------+
+| deptno | job                 | AVG(sal * 12) |
++--------+---------------------+---------------+
+|     30 | Compliance officers |    21000.0000 |
+|     50 | Compliance officers |    21000.0000 |
+|     20 | Public Relation     |    21000.0000 |
+|     20 | CLERK               |    11400.0000 |
+|     10 | CLERK               |    25600.0000 |
+|     30 | SALESMAN            |    19050.0000 |
+|     20 | MANAGER             |    35700.0000 |
+|     30 | MANAGER             |    33000.0000 |
+|     10 | MANAGER             |    29400.0000 |
+|     20 | ANALYST             |    36000.0000 |
+|     10 | PRESIDENT           |    60000.0000 |
+|     20 | vice PRESIDENT      |    60000.0000 |
+|     60 | Network             |    24000.0000 |
+|     60 | vice PRESIDENT      |    12000.0000 |
+|     30 | CLERK               |    16200.0000 |
+|     50 | ANALYST             |    21000.0000 |
++--------+---------------------+---------------+
+16 rows in set (0.00 sec)
+
+mysql> SELECT COUNT(sal), COUNT(comm)
+    -> FROM emp
+    -> WHERE deptno = 30;
++------------+-------------+
+| COUNT(sal) | COUNT(comm) |
++------------+-------------+
+|         12 |           7 |
++------------+-------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT job, AVG(sal), MIN(sal), MAX(sal)
+    -> FROM emp
+    -> WHERE job IN ('CLERK','MANAGER')
+    -> GROUP BY job;
++---------+-----------+----------+----------+
+| job     | AVG(sal)  | MIN(sal) | MAX(sal) |
++---------+-----------+----------+----------+
+| CLERK   | 1571.4286 |      800 |     3350 |
+| MANAGER | 2735.0000 |     1250 |     4150 |
++---------+-----------+----------+----------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT deptno
+    -> FROM emp
+    -> WHERE job = 'CLERK'
+    -> GROUP BY deptno
+    -> HAVING COUNT(*) > 1;
++--------+
+| deptno |
++--------+
+|     10 |
+|     20 |
+|     30 |
++--------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT ename, hiredate
+    -> FROM emp
+    -> WHERE MONTH(hiredate) = 12;
++-------+------------+
+| ename | hiredate   |
++-------+------------+
+| SMITH | 1980-12-17 |
+| AARAV | 1981-12-31 |
+| SCOTT | 1982-12-09 |
+| JAMES | 1981-12-03 |
+| FORD  | 1981-12-03 |
++-------+------------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT ename, hiredate
+    -> FROM emp
+    -> WHERE YEAR(hiredate) = 1980;
++--------+------------+
+| ename  | hiredate   |
++--------+------------+
+| SMITH  | 1980-12-17 |
+| GRASS  | 1980-02-14 |
+| AARUSH | 1980-02-14 |
++--------+------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT CONCAT(
+    ->   UPPER(LEFT(ename,1)), LOWER(SUBSTRING(ename,2)),
+    ->   ' - ',
+    ->   UPPER(LEFT(job,1)), LOWER(SUBSTRING(job,2))
+    -> )
+    -> FROM emp;
++---------------------------------------------------------------------------------------------------------------------+
+| CONCAT(
+  UPPER(LEFT(ename,1)), LOWER(SUBSTRING(ename,2)),
+  ' - ',
+  UPPER(LEFT(job,1)), LOWER(SUBSTRING(job,2))
+) |
++---------------------------------------------------------------------------------------------------------------------+
+| Gita - Compliance officers                                                                                          |
+| Vrushali - Compliance officers                                                                                      |
+| Sharmin - Public relation                                                                                           |
+| Bandish - Public relation                                                                                           |
+| Smith - Clerk                                                                                                       |
+| Aarav - Clerk                                                                                                       |
+| Thomas - Clerk                                                                                                      |
+| Allen - Salesman                                                                                                    |
+| Ward - Salesman                                                                                                     |
+| Jones - Manager                                                                                                     |
+| Martin - Salesman                                                                                                   |
+| Blake - Manager                                                                                                     |
+| Clark - Manager                                                                                                     |
+| Scott - Analyst                                                                                                     |
+| King - President                                                                                                    |
+| Fred - Vice president                                                                                               |
+| Turner - Salesman                                                                                                   |
+| Adams - Clerk                                                                                                       |
+| Ruhan - Network                                                                                                     |
+| Neel - Vice president                                                                                               |
+| James - Clerk                                                                                                       |
+| Ford - Analyst                                                                                                      |
+| Hoffman - Manager                                                                                                   |
+| Grass - Salesman                                                                                                    |
+| Miller - Clerk                                                                                                      |
+| Aarush - Salesman                                                                                                   |
+| Alex - Manager                                                                                                      |
+| Natasha - Clerk                                                                                                     |
+| Sangita - Compliance officers                                                                                       |
+| Supriya - Analyst                                                                                                   |
++---------------------------------------------------------------------------------------------------------------------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT empno, ename, DATE_FORMAT(hiredate, '%d/%m/%y') AS hiredate
+    -> FROM emp
+    -> WHERE deptno = 20;
++-------+---------+----------+
+| empno | ename   | hiredate |
++-------+---------+----------+
+|  6473 | SHARMIN | 19/07/81 |
+|  6781 | BANDISH | 19/07/81 |
+|  7369 | SMITH   | 17/12/80 |
+|  7566 | JONES   | 02/04/81 |
+|  7788 | SCOTT   | 09/12/82 |
+|  7840 | FRED    | 09/08/83 |
+|  7876 | ADAMS   | 12/01/83 |
+|  7902 | FORD    | 03/12/81 |
++-------+---------+----------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT TIMESTAMPDIFF(MONTH, hiredate, CURDATE()) AS "Months Worked"
+    -> FROM emp
+    -> WHERE job = 'PRESIDENT';
++---------------+
+| Months Worked |
++---------------+
+|           533 |
++---------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT DAYNAME(hiredate)
+    -> FROM emp
+    -> WHERE ename = 'SMITH';
++-------------------+
+| DAYNAME(hiredate) |
++-------------------+
+| Wednesday         |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT TIME(hiredate)
+    -> FROM emp
+    -> WHERE ename = 'ADAMS';
++----------------+
+| TIME(hiredate) |
++----------------+
+| 00:00:00       |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT DAY(hiredate)
+    -> FROM emp
+    -> WHERE ename = 'KING';
++---------------+
+| DAY(hiredate) |
++---------------+
+|            17 |
++---------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT MONTHNAME(hiredate)
+    -> FROM emp
+    -> WHERE ename = 'MARTIN';
++---------------------+
+| MONTHNAME(hiredate) |
++---------------------+
+| September           |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT empno, ename, QUARTER(hiredate) AS Quarter
+    -> FROM emp;
++-------+----------+---------+
+| empno | ename    | Quarter |
++-------+----------+---------+
+|  6001 | GITA     |       3 |
+|  6129 | VRUSHALI |       3 |
+|  6473 | SHARMIN  |       3 |
+|  6781 | BANDISH  |       3 |
+|  7369 | SMITH    |       4 |
+|  7415 | AARAV    |       4 |
+|  7421 | THOMAS   |       3 |
+|  7499 | ALLEN    |       1 |
+|  7521 | WARD     |       1 |
+|  7566 | JONES    |       2 |
+|  7654 | MARTIN   |       3 |
+|  7698 | BLAKE    |       2 |
+|  7782 | CLARK    |       2 |
+|  7788 | SCOTT    |       4 |
+|  7839 | KING     |       4 |
+|  7840 | FRED     |       3 |
+|  7844 | TURNER   |       3 |
+|  7876 | ADAMS    |       1 |
+|  7888 | Ruhan    |       3 |
+|  7889 | Neel     |       3 |
+|  7900 | JAMES    |       4 |
+|  7902 | FORD     |       4 |
+|  7919 | HOFFMAN  |       1 |
+|  7920 | GRASS    |       1 |
+|  7934 | MILLER   |       1 |
+|  7945 | AARUSH   |       1 |
+|  7949 | ALEX     |       1 |
+|  8433 | NATASHA  |       3 |
+|  9400 | SANGITA  |       3 |
+|  9473 | SUPRIYA  |       3 |
++-------+----------+---------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT ename,
+    ->        DATE_FORMAT(hiredate, 'The %D of %M %Y') AS hiredate
+    -> FROM emp
+    -> WHERE job = 'ANALYST';
++---------+--------------------------+
+| ename   | hiredate                 |
++---------+--------------------------+
+| SCOTT   | The 9th of December 1982 |
+| FORD    | The 3rd of December 1981 |
+| SUPRIYA | The 19th of July 1981    |
++---------+--------------------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT ename, job,
+    ->   CASE
+    ->     WHEN job = 'CLERK' THEN 'A'
+    ->     WHEN job = 'MANAGER' THEN 'B'
+    ->     WHEN job = 'PRESIDENT' THEN 'C'
+    ->     ELSE 'D'
+    ->   END AS Classification
+    -> FROM emp;
++----------+---------------------+----------------+
+| ename    | job                 | Classification |
++----------+---------------------+----------------+
+| GITA     | Compliance officers | D              |
+| VRUSHALI | Compliance officers | D              |
+| SHARMIN  | Public Relation     | D              |
+| BANDISH  | Public Relation     | D              |
+| SMITH    | CLERK               | A              |
+| AARAV    | CLERK               | A              |
+| THOMAS   | CLERK               | A              |
+| ALLEN    | SALESMAN            | D              |
+| WARD     | SALESMAN            | D              |
+| JONES    | MANAGER             | B              |
+| MARTIN   | SALESMAN            | D              |
+| BLAKE    | MANAGER             | B              |
+| CLARK    | MANAGER             | B              |
+| SCOTT    | ANALYST             | D              |
+| KING     | PRESIDENT           | C              |
+| FRED     | vice PRESIDENT      | D              |
+| TURNER   | SALESMAN            | D              |
+| ADAMS    | CLERK               | A              |
+| Ruhan    | Network             | D              |
+| Neel     | vice PRESIDENT      | D              |
+| JAMES    | CLERK               | A              |
+| FORD     | ANALYST             | D              |
+| HOFFMAN  | MANAGER             | B              |
+| GRASS    | SALESMAN            | D              |
+| MILLER   | CLERK               | A              |
+| AARUSH   | SALESMAN            | D              |
+| ALEX     | MANAGER             | B              |
+| NATASHA  | CLERK               | A              |
+| SANGITA  | Compliance officers | D              |
+| SUPRIYA  | ANALYST             | D              |
++----------+---------------------+----------------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT MAX(LENGTH(ename)) AS "Max Length"
+    -> FROM emp;
++------------+
+| Max Length |
++------------+
+|          8 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT ename,
+    ->   CONCAT(
+    ->     TIMESTAMPDIFF(YEAR, hiredate, CURDATE()), ' years ',
+    ->     MOD(TIMESTAMPDIFF(MONTH, hiredate, CURDATE()), 12), ' months'
+    ->   ) AS Service
+    -> FROM emp;
++----------+--------------------+
+| ename    | Service            |
++----------+--------------------+
+| GITA     | 44 years 9 months  |
+| VRUSHALI | 44 years 9 months  |
+| SHARMIN  | 44 years 9 months  |
+| BANDISH  | 44 years 9 months  |
+| SMITH    | 45 years 4 months  |
+| AARAV    | 44 years 3 months  |
+| THOMAS   | 44 years 9 months  |
+| ALLEN    | 45 years 2 months  |
+| WARD     | 45 years 1 months  |
+| JONES    | 45 years 0 months  |
+| MARTIN   | 44 years 6 months  |
+| BLAKE    | 44 years 11 months |
+| CLARK    | 44 years 10 months |
+| SCOTT    | 43 years 4 months  |
+| KING     | 44 years 5 months  |
+| FRED     | 42 years 8 months  |
+| TURNER   | 44 years 7 months  |
+| ADAMS    | 43 years 3 months  |
+| Ruhan    | 42 years 8 months  |
+| Neel     | 42 years 8 months  |
+| JAMES    | 44 years 4 months  |
+| FORD     | 44 years 4 months  |
+| HOFFMAN  | 44 years 0 months  |
+| GRASS    | 46 years 2 months  |
+| MILLER   | 44 years 2 months  |
+| AARUSH   | 46 years 2 months  |
+| ALEX     | 44 years 2 months  |
+| NATASHA  | 44 years 9 months  |
+| SANGITA  | 44 years 9 months  |
+| SUPRIYA  | 44 years 9 months  |
++----------+--------------------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT COUNT(*) AS Total
+    -> FROM emp
+    -> WHERE YEAR(hiredate) = 1985;
++-------+
+| Total |
++-------+
+|     0 |
++-------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COUNT(*) AS "Total Employees"
+    -> FROM emp
+    -> WHERE YEAR(hiredate) = 1985
+    ->   AND MONTH(hiredate) = 3;
++-----------------+
+| Total Employees |
++-----------------+
+|               0 |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT SUM(AMOUNT) FROM sales;
++-------------+
+| SUM(AMOUNT) |
++-------------+
+|    95263.00 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql>
+mysql> ^C
+mysql> SELECT CUSTNAME, MIN(AMOUNT), MAX(AMOUNT)
+    -> FROM sales
+    -> GROUP BY CUSTNAME;
++----------------+-------------+-------------+
+| CUSTNAME       | MIN(AMOUNT) | MAX(AMOUNT) |
++----------------+-------------+-------------+
+| JOCKSPORTS     |       50.00 |     2400.00 |
+| TKB SPORT SHOP |        8.40 |       58.00 |
+| VOLLYRITE      |     2300.50 |    16569.00 |
+| JUST TENNIS    |       24.00 |      450.00 |
+| EVERY MOUNTAIN |       24.00 |     3000.00 |
+| K + T SPORTS   |      340.00 |    29000.00 |
+| SHAPE UP       |        2.40 |      440.00 |
+| WOMENS SPORTS  |      180.00 |      280.00 |
+| NORTH WOODS    |      440.00 |     4800.00 |
++----------------+-------------+-------------+
+9 rows in set (0.00 sec)
+
+mysql> SELECT PRODNAME, MIN(AMOUNT), MAX(AMOUNT), SUM(AMOUNT)
+    -> FROM sales
+    -> GROUP BY PRODNAME;
++-------------------------+-------------+-------------+-------------+
+| PRODNAME                | MIN(AMOUNT) | MAX(AMOUNT) | SUM(AMOUNT) |
++-------------------------+-------------+-------------+-------------+
+| RH: "GUIDE TO TENNIS"   |       34.00 |     1703.40 |     2417.40 |
+| ACE TENNIS RACKET II    |       84.00 |     4500.00 |     8809.50 |
+| ACE TENNIS BALLS-3 PACK |        8.40 |     3306.00 |     5426.90 |
+| ACE TENNIS NET          |       50.00 |    29000.00 |    29398.00 |
+| ACE TENNIS RACKET I     |       35.00 |    16569.00 |    22144.00 |
+| SB ENERGY BAR-6 PACK    |        2.40 |     2400.00 |     3586.40 |
+| ACE TENNIS BALLS-6 PACK |      250.00 |     5600.00 |    10056.80 |
+| SP TENNIS RACKET        |       24.00 |     4800.00 |     7224.00 |
+| SP JUNIOR RACKET        |     1500.00 |     2500.00 |     4000.00 |
+| SB VITA SNACK-6 PACK    |      400.00 |     1200.00 |     2200.00 |
++-------------------------+-------------+-------------+-------------+
+10 rows in set (0.01 sec)
+
+mysql> SELECT deptno, AVG(sal)
+    -> FROM emp
+    -> GROUP BY deptno
+    -> HAVING COUNT(*) > 3;
++--------+-----------+
+| deptno | AVG(sal)  |
++--------+-----------+
+|     10 | 2770.0000 |
+|     20 | 2421.8750 |
+|     30 | 1852.0833 |
++--------+-----------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT CUSTNAME, SUM(AMOUNT)
+    -> FROM sales
+    -> WHERE CUSTNAME <> 'TKB SPORT SHOP'
+    -> GROUP BY CUSTNAME
+    -> HAVING COUNT(*) <= 4;
++---------------+-------------+
+| CUSTNAME      | SUM(AMOUNT) |
++---------------+-------------+
+| VOLLYRITE     |    27775.50 |
+| SHAPE UP      |      700.40 |
+| WOMENS SPORTS |      710.00 |
+| NORTH WOODS   |     6400.00 |
++---------------+-------------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT MAX(sal), MIN(sal), SUM(sal), AVG(sal)
+    -> FROM emp;
++----------+----------+----------+-----------+
+| MAX(sal) | MIN(sal) | SUM(sal) | AVG(sal)  |
++----------+----------+----------+-----------+
+|     5000 |      800 |    63700 | 2123.3333 |
++----------+----------+----------+-----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT job, MAX(sal), MIN(sal), SUM(sal), AVG(sal)
+    -> FROM emp
+    -> GROUP BY job;
++---------------------+----------+----------+----------+-----------+
+| job                 | MAX(sal) | MIN(sal) | SUM(sal) | AVG(sal)  |
++---------------------+----------+----------+----------+-----------+
+| Compliance officers |     1750 |     1750 |     5250 | 1750.0000 |
+| Public Relation     |     1750 |     1750 |     3500 | 1750.0000 |
+| CLERK               |     3350 |      800 |    11000 | 1571.4286 |
+| SALESMAN            |     2575 |     1250 |     9525 | 1587.5000 |
+| MANAGER             |     4150 |     1250 |    13675 | 2735.0000 |
+| ANALYST             |     3000 |     1750 |     7750 | 2583.3333 |
+| PRESIDENT           |     5000 |     5000 |     5000 | 5000.0000 |
+| vice PRESIDENT      |     5000 |     1000 |     6000 | 3000.0000 |
+| Network             |     2000 |     2000 |     2000 | 2000.0000 |
++---------------------+----------+----------+----------+-----------+
+9 rows in set (0.00 sec)
+
+mysql> SELECT ename
+    -> FROM emp
+    -> WHERE sal < (
+    ->   SELECT AVG(sal) FROM emp WHERE deptno = 20
+    -> );
++----------+
+| ename    |
++----------+
+| GITA     |
+| VRUSHALI |
+| SHARMIN  |
+| BANDISH  |
+| SMITH    |
+| THOMAS   |
+| ALLEN    |
+| WARD     |
+| MARTIN   |
+| TURNER   |
+| ADAMS    |
+| Ruhan    |
+| Neel     |
+| JAMES    |
+| MILLER   |
+| AARUSH   |
+| ALEX     |
+| NATASHA  |
+| SANGITA  |
+| SUPRIYA  |
++----------+
+20 rows in set (0.00 sec)
+
+mysql> SELECT deptno, job, AVG(sal*12)
+    -> FROM emp
+    -> GROUP BY deptno, job;
++--------+---------------------+-------------+
+| deptno | job                 | AVG(sal*12) |
++--------+---------------------+-------------+
+|     30 | Compliance officers |  21000.0000 |
+|     50 | Compliance officers |  21000.0000 |
+|     20 | Public Relation     |  21000.0000 |
+|     20 | CLERK               |  11400.0000 |
+|     10 | CLERK               |  25600.0000 |
+|     30 | SALESMAN            |  19050.0000 |
+|     20 | MANAGER             |  35700.0000 |
+|     30 | MANAGER             |  33000.0000 |
+|     10 | MANAGER             |  29400.0000 |
+|     20 | ANALYST             |  36000.0000 |
+|     10 | PRESIDENT           |  60000.0000 |
+|     20 | vice PRESIDENT      |  60000.0000 |
+|     60 | Network             |  24000.0000 |
+|     60 | vice PRESIDENT      |  12000.0000 |
+|     30 | CLERK               |  16200.0000 |
+|     50 | ANALYST             |  21000.0000 |
++--------+---------------------+-------------+
+16 rows in set (0.00 sec)
+
+mysql> SELECT COUNT(sal), COUNT(comm)
+    -> FROM emp
+    -> WHERE deptno = 30;
++------------+-------------+
+| COUNT(sal) | COUNT(comm) |
++------------+-------------+
+|         12 |           7 |
++------------+-------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT job, AVG(sal), MIN(sal), MAX(sal)
+    -> FROM emp
+    -> WHERE job IN ('CLERK','MANAGER')
+    -> GROUP BY job;
++---------+-----------+----------+----------+
+| job     | AVG(sal)  | MIN(sal) | MAX(sal) |
++---------+-----------+----------+----------+
+| CLERK   | 1571.4286 |      800 |     3350 |
+| MANAGER | 2735.0000 |     1250 |     4150 |
++---------+-----------+----------+----------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT MAX(sal)
+    -> FROM emp
+    -> WHERE sal < (SELECT MAX(sal) FROM emp);
++----------+
+| MAX(sal) |
++----------+
+|     4150 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT *
+    -> FROM emp e
+    -> WHERE sal = (
+    ->   SELECT MAX(sal)
+    ->   FROM emp
+    ->   WHERE deptno = e.deptno
+    -> );
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+------------+------------+------------+----------+
+| EMPNO | ENAME    | GENDER | JOB                 | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME  | PWD        | PHONE      | isActive |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+------------+------------+------------+----------+
+|  6129 | VRUSHALI | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | VRUSHALI   | PUN@8877   | NULL       |        1 |
+|  7839 | KING     | M      | PRESIDENT           | NULL | 1981-11-17 | 5000 | NULL |     10 |       1 | KING       | r50mpm     | 7132300081 |        1 |
+|  7840 | FRED     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 5000 | NULL |     20 |       1 | SAND STONE | a12recmpm  | NULL       |        1 |
+|  7888 | Ruhan    | M      | Network             | 7888 | 1983-08-09 | 2000 | NULL |     60 |       1 | Ruhan      | BRD@1122   | NULL       |        1 |
+|  7919 | HOFFMAN  | M      | MANAGER             | 7566 | 1982-03-24 | 4150 | NULL |     30 |       3 | INTERVAL   | sales@2017 | NULL       |        1 |
+|  9400 | SANGITA  | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SANGITA    | NULL       | NULL       |        1 |
+|  9473 | SUPRIYA  | F      | ANALYST             | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SUPRIYA    | XYZ@1234   | NULL       |        1 |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+------------+------------+------------+----------+
+7 rows in set (0.00 sec)
+
+mysql> SELECT REPID
+    -> FROM sales
+    -> GROUP BY REPID
+    -> ORDER BY SUM(AMOUNT) DESC
+    -> LIMIT 1;
++-------+
+| REPID |
++-------+
+|  7844 |
++-------+
+1 row in set (0.00 sec)
+
+mysql> SELECT job, MAX(sal)
+    -> FROM emp
+    -> GROUP BY job;
++---------------------+----------+
+| job                 | MAX(sal) |
++---------------------+----------+
+| Compliance officers |     1750 |
+| Public Relation     |     1750 |
+| CLERK               |     3350 |
+| SALESMAN            |     2575 |
+| MANAGER             |     4150 |
+| ANALYST             |     3000 |
+| PRESIDENT           |     5000 |
+| vice PRESIDENT      |     5000 |
+| Network             |     2000 |
++---------------------+----------+
+9 rows in set (0.00 sec)
+
+mysql> SELECT *
+    -> FROM emp e
+    -> WHERE hiredate = (
+    ->   SELECT MAX(hiredate)
+    ->   FROM emp
+    ->   WHERE deptno = e.deptno
+    -> );
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+-------------+------------+------------+----------+
+| EMPNO | ENAME    | GENDER | JOB                 | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME   | PWD        | PHONE      | isActive |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+-------------+------------+------------+----------+
+|  6129 | VRUSHALI | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | VRUSHALI    | PUN@8877   | NULL       |        1 |
+|  7840 | FRED     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 5000 | NULL |     20 |       1 | SAND STONE  | a12recmpm  | NULL       |        1 |
+|  7888 | Ruhan    | M      | Network             | 7888 | 1983-08-09 | 2000 | NULL |     60 |       1 | Ruhan       | BRD@1122   | NULL       |        1 |
+|  7889 | Neel     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 1000 | NULL |     60 |       0 | Neel        | BRD@1122   | NULL       |        1 |
+|  7919 | HOFFMAN  | M      | MANAGER             | 7566 | 1982-03-24 | 4150 | NULL |     30 |       3 | INTERVAL    | sales@2017 | NULL       |        1 |
+|  7934 | MILLER   | M      | CLERK               | 7782 | 1982-01-23 | 1300 | 1300 |     10 |       2 | QUARTERNOTE | r50mpm     | 7132300055 |        0 |
+|  9400 | SANGITA  | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SANGITA     | NULL       | NULL       |        1 |
+|  9473 | SUPRIYA  | F      | ANALYST             | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SUPRIYA     | XYZ@1234   | NULL       |        1 |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+-------------+------------+------------+----------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT YEAR(hiredate), COUNT(*)
+    -> FROM emp
+    -> GROUP BY YEAR(hiredate)
+    -> ORDER BY COUNT(*) DESC
+    -> LIMIT 1;
++----------------+----------+
+| YEAR(hiredate) | COUNT(*) |
++----------------+----------+
+|           1981 |       19 |
++----------------+----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT ename
+    -> FROM emp
+    -> GROUP BY ename
+    -> HAVING COUNT(*) = 1;
++----------+
+| ename    |
++----------+
+| GITA     |
+| VRUSHALI |
+| SHARMIN  |
+| BANDISH  |
+| SMITH    |
+| AARAV    |
+| THOMAS   |
+| ALLEN    |
+| WARD     |
+| JONES    |
+| MARTIN   |
+| BLAKE    |
+| CLARK    |
+| SCOTT    |
+| KING     |
+| FRED     |
+| TURNER   |
+| ADAMS    |
+| Ruhan    |
+| Neel     |
+| JAMES    |
+| FORD     |
+| HOFFMAN  |
+| GRASS    |
+| MILLER   |
+| AARUSH   |
+| ALEX     |
+| NATASHA  |
+| SANGITA  |
+| SUPRIYA  |
++----------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT d.*, COUNT(e.empno)
+    -> FROM dept d
+    -> LEFT JOIN emp e ON d.deptno = e.deptno
+    -> GROUP BY d.deptno;
++--------+------------+----------+------------+------------+----------------+
+| DEPTNO | DNAME      | LOC      | PWD        | STARTEDON  | COUNT(e.empno) |
++--------+------------+----------+------------+------------+----------------+
+|     10 | ACCOUNTING | NEW YORK | r50mpm     | 24/03/1989 |              5 |
+|     20 | RESEARCH   | DALLAS   | a12recmpm  | 12/04/1989 |              8 |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 |             12 |
+|     40 | OPERATIONS | BOSTON   | opr@123    | 12/07/1989 |              0 |
+|     50 | HR         | PUNE     | PUN@8877   | 22/12/1989 |              3 |
+|     60 | IT         | BARODA   | BRD@1122   | 02/10/1989 |              2 |
++--------+------------+----------+------------+------------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT d.*
+    -> FROM dept d
+    -> LEFT JOIN emp e ON d.deptno = e.deptno
+    -> WHERE e.empno IS NULL;
++--------+------------+--------+---------+------------+
+| DEPTNO | DNAME      | LOC    | PWD     | STARTEDON  |
++--------+------------+--------+---------+------------+
+|     40 | OPERATIONS | BOSTON | opr@123 | 12/07/1989 |
++--------+------------+--------+---------+------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT MONTH(hiredate), COUNT(*)
+    -> FROM emp
+    -> GROUP BY MONTH(hiredate)
+    -> ORDER BY MONTH(hiredate);
++-----------------+----------+
+| MONTH(hiredate) | COUNT(*) |
++-----------------+----------+
+|               1 |        3 |
+|               2 |        4 |
+|               3 |        1 |
+|               4 |        1 |
+|               5 |        1 |
+|               6 |        1 |
+|               7 |        8 |
+|               8 |        3 |
+|               9 |        2 |
+|              11 |        1 |
+|              12 |        5 |
++-----------------+----------+
+11 rows in set (0.00 sec)

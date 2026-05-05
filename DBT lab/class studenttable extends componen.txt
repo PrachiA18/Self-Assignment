@@ -1,0 +1,30 @@
+class studenttable extends component{
+constructor(){
+super();
+
+
+this.state={
+ students;[
+ {name: "amit,marks:90},
+
+]
+};
+}
+
+deleteRow=(index)=>{
+  const updatedstudent=this.state.students.filter(
+  (_,i)=> i = !==index
+);
+ this.setstate({students:updatedstudents});
+};
+render(){
+return(
+<div>
+<table>
+
+{this.state.students.map((student,index)=>
+<tr key={index}>
+<td?{student.name}</td>
+<td>{student.marks}</td>
+
+<button onclick={() => this.deleteRow(index)}

@@ -1,0 +1,8 @@
+import react,{useState} from "react";
+import childcomponent from "./childcomponent";
+
+
+function parentcomponent(){
+ const [num1,setnum1]= useState("");
+  const [num2,setnum2] =usesState(" ");
+  const[result,setresult]=usestate("")

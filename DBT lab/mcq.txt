@@ -1,0 +1,1041 @@
+
+Core Java Mock 1 Batch_FEB_2026 
+andureprachi11@gmail.com Switch accounts
+ 
+Draft saved
+* Indicates required question
+Email
+*
+Record andureprachi11@gmail.com as the email to be included with my response
+Q. 19. Which implementation of Iterator can traverse back and forth?
+
+*
+1 point
+a. Iterator
+b. ListIterator
+c. MapIterator
+d. SetIterator
+Q. 43. Class is ____
+
+*
+1 point
+a. instance of an object
+b. Scope of an object
+c. Parent of an object
+d. blueprint of an object
+Q. 35. Which of these classes is super class of all Exception Classes?
+
+*
+1 point
+a. RunTimeExceptions
+b. String
+c. Throwable
+d. Cachable
+Q. 57. The Synchronized keyword is applicable for 
+*
+1 point
+a. Variables and methods
+b. Methods and classes
+c. Varibles and Classes
+d. Methods and Blocks
+Q. 51. Which of these methods of class String is used to compare two String objects for their equality?
+
+*
+1 point
+a. Equals()
+b. equals()
+c. isequal()
+d. Isequal()
+PRN
+*
+1 point
+260245920010
+Q. 59. Which of these classes relies upon its subclasses for its implementation of its methods
+*
+1 point
+a. Object CLass
+b. Abstract CLass
+c. Final CLass
+d. Sealed Class
+Q. 39. Which exception is thrown by the read() method of InputStream class
+
+*
+1 point
+a. Exception
+b. IOException
+c.FileNotFoundException
+d. none of the above
+Q. 32. What is output of the java program with switch and Strings
+
+String phone = "APPLE";
+
+              switch(phone)
+
+              {
+
+              case "Apple" : System.out.println("Apple");break;
+
+              case "APPLE" : System.out.println("APPLE");break;
+
+              case "SAMSUNG" : System.out.println("SAMSUNG");
+
+              }
+
+*
+1 point
+a. Apple
+b. APPLE
+c. SAMSUNG
+d. Compile error
+Q. 13. What is output of the java code snippet
+
+int a=4, b=6, c=8;
+
+boolean d = a>5 && b>5 & c++<10;
+
+System.out.println(c);
+
+*
+1 point
+a. 8
+b. 9
+c. 10
+d. Compile time error
+Q. 1. Which of the following keyword is used to explicitely raise an exception?
+*
+1 point
+raise
+catch
+throw
+throws
+Q. 31. Which of the following character oriented class for receiving input from keyboard?
+
+*
+1 point
+a. IOReader
+b. InputStreamReader
+c. DataInputStream
+d. none of the above
+Q. 56. Which of these is valid about threads in java?
+
+*
+1 point
+a. Threads consumes cpu in best possible manner
+b. Threads enables multiprocessing
+c. Threads can execute any part of process and same part of  process can be executed by multiple threads
+d. All of the above
+Q. 14. Properties are implemented using ____ in java
+
+*
+1 point
+a. Methods
+b. Variables
+c. Interface
+d. All the above
+Q. 28. In java local variables are stored in ___ memory and instance variables are stored in ___ memory
+
+*
+1 point
+a. Stack Stack
+b. Heap Heap
+c. Stack Heap
+d. Heap Stack
+Q. 26. Which is the exception or error that is thrown if a non-existing command-line argument is referred to in a java program? 
+
+*
+1 point
+a. StackOverFlowError
+b. IndexOutOfBoundException
+c. ArrayIndexOutOfBoundException
+d. ArithmeticException
+Q. 27. Which class stores elements in ascending order?
+
+*
+1 point
+a. ArrayList
+b. HashSet
+c. TreeSet
+d. All the answers are true
+Q.54 How to get UTC time?
+
+*
+1 point
+a. Time.getUTC();
+b. Instant.now();
+c. Date.getUTC();
+d. TimeZone.getUTC();
+Q. 42. What is output of the java program using toString() method
+
+public class College {
+
+       public String toString()
+
+       {return "College Object";}
+
+ 
+
+}
+
+public class Test {
+
+ 
+
+       public static void main(String[] args) {
+
+              S42College col = new S42College();
+
+              System.out.println("Printing Object="+col);
+
+       }
+
+ 
+
+}
+
+*
+1 point
+a. Printing Object =
+b. Printing Object = null;
+c. Printing Object = College Object
+d. Compile error
+Q. 22. What is output of the java code
+
+public class S22 {
+
+ 
+
+       public static void main(String[] args) {
+
+              String str = "Hello";
+
+              System.out.println(str.substring(1,4));
+
+       }
+
+ 
+
+}
+
+*
+1 point
+a. hel
+b. ell
+c. llo
+d. hell
+Q. 5. Which interface must be extended in order to use multithreading  
+
+*
+1 point
+a. Runnable
+b. Thread
+c. Threading
+d. none of the above
+Q. 4. The interface comparable contains the method_______
+
+*
+1 point
+a. toCompare
+b. compare
+c. compareTo
+d. compareWith
+Q. 10. Increment and decrement operator in java has associativity 
+
+*
+1 point
+a. left to right
+b. right to left
+c. right to right
+d. left to left
+Q. 12. Which component is used to compile, debug execute in java program?
+
+*
+1 point
+a. JDK
+b. JVM
+c. JIT
+d. JRE
+Q. 37. What is output of the java program with an abstract class
+
+ 
+
+abstract class Coffee {
+
+       Coffee()
+
+       {
+
+              System.out.println("inside constructor of coffee");
+
+       }
+
+}
+
+public class ColdCoffee extends Coffee {
+
+       ColdCoffee()
+
+       {
+
+              System.out.println("inside constructor of coldcoffee");
+
+       }
+
+}
+
+public class AbstractClassTesting {
+
+ 
+
+       public static void main(String[] args) {
+
+              ColdCoffee cf = new ColdCoffee();
+
+       }
+
+ 
+
+}
+
+*
+1 point
+a.  Compiler error
+b. inside constructor of coffee inside constructor of coldcoffee
+c. inside constructor of coldcoffee
+d. inside constructor of coffee
+Q. 15. The methods wait() and notify() are defined in  
+
+*
+1 point
+a. java.lang.Runnable
+b. java.lang.ThreadGroup
+c. java.lang.Thread
+d. java.lang.Object
+Q. 16 What is output of the java program with arrays
+
+public class Test {
+
+ 
+
+       public static void main(String[] args) {
+
+              String computer[] = {"RAM","HDD","MOUSE"};
+
+              String parts[] = {computer[0],computer[2]};
+
+              System.out.println(parts[1]);
+
+       }
+
+ 
+
+
+}
+
+*
+1 point
+a. RAM
+b. HDD
+c. MOUSE
+d. Compile time error
+Q. 21. Which block is executed, regardless of exception thrown?
+
+*
+1 point
+a. throws
+b. finally
+c. catch
+d. throw
+Q. 6. The out object is predefined standard object of this class
+
+*
+1 point
+a. PrintStream
+b. DisplayStream
+c. WriteStream
+d. FileoutputStream
+Q. 53. The accuracy and efficiency of a HashMap can be guaranted with
+
+*
+1 point
+a. override equals method
+b. override HashCode method
+c. Both of the above
+d. none of the above
+Q. 17. What is output of the java code
+
+public class Test {
+
+ 
+
+       public static void main(String[] args) {
+
+              try
+
+              {
+
+                     System.out.println("Calculate:"+" "+1/0);
+
+              }
+
+              catch(ArithmeticException e)
+
+              {
+
+                     System.out.println("Exception: Division by Zero");
+
+              }
+
+ 
+
+       }
+
+ 
+
+}
+
+*
+1 point
+a. Calculate:
+b. Calculate: Exception Division by zero
+c. Exception: Division by Zero
+d. Exception Division by zeroCalculate:
+Q. 38. What is output of the java program
+
+public class MyThread implements Runnable{
+
+       @Override
+
+       public void run() {
+
+              System.out.println(Thread.currentThread().getName());
+
+       }
+
+ 
+
+}
+
+public class ThreadTest {
+
+ 
+
+       public static void main(String[] args) {
+
+              Thread thread = new Thread(new MyThread());
+
+              thread.run();
+
+              thread.run();
+
+              thread.start();
+
+       }
+
+ 
+
+}
+
+*
+1 point
+a. main main Thread-0
+b. Thread-0  main  Thread-1
+c. main Thread-0 Thread-1
+d. Thread-0  Thread-1  Thread-2
+Q. 36. What is output of the java program
+
+public class Cricket {
+
+ 
+
+       int runs;
+
+}
+
+public class Test {
+
+ 
+
+       public static void main(String[] args) {
+
+              Cricket c1 = new Cricket();
+
+              c1.runs =250;
+
+              Cricket c2;
+
+              c2=c1;
+
+              c2.runs =300;
+
+              System.out.println("Runs= "+c1.runs);
+
+       }
+
+ 
+
+}
+
+*
+1 point
+a. Runs = 0
+b. Runs = 250
+c. Runs = 300
+d. Compiler error
+Q.41. What is output of the java program
+
+public class Test {
+
+ 
+
+       public static void main(String[] args) {
+
+              String s1 = new String("cdac");
+
+              String s2 = new String("acts");
+
+              System.out.println(s1=s2);
+
+       }
+
+ 
+
+}
+
+*
+1 point
+a. true
+b. false
+c. cdac
+d. acts
+Q. 45. Which of the following is wrong statement
+
+*
+1 point
+a. class extends class
+b. class implements interface
+c. interface extends interface
+d. interface implements interface
+Q. 46.  Which of the following class is super class of every class in java?
+
+*
+1 point
+a. String class
+b. Object class
+c. Abstract class
+d. Collection class
+Q. 47.  What is downcasting?
+
+*
+1 point
+a. casting subtype to supertype and vice versa
+b. casting any type to any other type
+c. catsing supertype to subtype
+d. casting subtype to supertype
+Q. 25. What is output of the java program with an interface
+
+public interface Bus {
+
+       void move();
+
+}
+
+class ElectricBus implements Bus
+
+{
+
+       public void move()
+
+       {
+
+              System.out.println("implemented move() method");
+
+       }
+
+}
+
+public class InterfaceTest1 {
+
+ 
+
+       public static void main(String[] args) {
+
+              new ElectricBus().move();
+
+       }
+
+ 
+
+}
+
+*
+1 point
+a.  no output
+b. implemented move() methd
+c. compile error
+d. none of the above
+Q. 48. What is output of the java program
+
+public class Test {
+
+ 
+
+       public static void main(String[] args) {
+
+              double a = 295.04;
+
+              int b = 300;
+
+              byte c =(byte) a;
+
+              byte d =(byte) b;
+
+              System.out.println(c+" "+d);
+
+       }
+
+ 
+
+}
+
+*
+1 point
+a. 38 43
+b. 39 44
+c. 295 300
+d. 295.04 300
+Q. 18. What is output of the java code snippet
+
+int a=23, b=34;
+
+a=((a<(b) ? (b+a) : (b-a)));
+
+System.out.println(a);
+
+*
+1 point
+a. 11
+b. 57
+c. 23
+d. 34
+Q. 49. Which of these is a wrapper for data type char
+
+*
+1 point
+a. Char
+b. String
+c. Character
+d. All of the above
+Q. 24. What is output of the java code  
+
+final class Bus {
+
+       void show()
+
+       {
+
+              System.out.println("Generic Bus");
+
+       }
+
+}
+
+class ElectricBus extends Bus
+
+{
+
+       void show()
+
+       {
+
+              System.out.println("Electric Bus");
+
+       }
+
+}
+
+public class TestInheritance()
+
+{
+
+       public static void main(String[] args)
+
+       {
+
+              ElecrticBus eb = new ElectricBus();
+
+              eb.show();
+
+       }
+
+}
+
+*
+1 point
+a. Generic Bus
+b. Electric Bus
+c. Generic Bus Electric Bus
+d. Compile time error
+Q. 9. What will be output of following program
+
+Int a =10;
+
+If(a==9)
+
+{
+
+              System.out.println("OK");
+
+              System.out.println("Hello");
+
+ 
+
+ 
+
+ 
+
+}
+
+Else
+
+{
+
+              System.out.println("Bye");
+
+ 
+
+}
+
+*
+1 point
+a. OK Hello
+b. Bye
+c. Compile error
+d. none of the above
+Q. 52. What will be the ouput of the following java code
+
+public class Enum {
+
+ 
+
+       public static void main(String[] args) {
+
+              enum Season
+
+              {
+
+                     WINTER , SPRING, SUMMER, FALL
+
+              };
+
+              System.out.println(Season.WINTER.ordinal()+Season. SPRING.ordinal());
+
+       }
+
+ 
+
+}
+
+*
+1 point
+a. 0 1
+b. 1
+c. 0
+d. none of the above
+Q. 23. Which is fast among AND (&) and Short Circuit AND (&&) operators in Java
+
+*
+1 point
+a. And operators
+b. Short Circuit AND
+c. Both work at the same time
+d. none of the above
+Q. 58. When does Exception in java arises in code sequence?
+
+*
+1 point
+a. Run Time
+b. Can Occur Any Time
+c. Compile Time
+d. none of the above
+Q. 55. Which of these is an interface for control over serialization and deserialization?
+
+*
+1 point
+a. Serializable
+b. Externalizable
+c. FileFilter
+d. ObjectInput
+Q. 30. What is output of the java program
+
+int ages[3] = {25,27,30};
+
+System.out.println(ages[1]);
+
+*
+1 point
+a. 25
+b. 27
+c. 30
+d. compile time error
+Q. 2. An object is created _______ time in java.
+
+*
+1 point
+Compile-time
+Run-time
+c. Assembling-time
+none of the above
+Q. 60. Which of the following is an incorrect statement about interface?
+
+*
+1 point
+a. Interfaces specifies what class must do but not how it does
+b. Interfaces are specified public if they are to be accessed by any code in the program
+c. All variables in interface are implicitly final and static
+d. All variables are abstract and methods are static if interface is defined public
+Name
+*
+1 point
+Prachi Andure
+Q. 7. What is the output of the below java program
+
+ public class Sweet {
+
+       void price()
+
+       {
+
+              System.out.println("Sweet=$10");
+
+       }
+
+}
+
+class Sugar extends Sweet
+
+{
+
+       void price()
+
+       {
+
+              super.price();
+
+              System.out.println("Sugar=$20");
+
+       }
+
+       }
+
+public class Javainheritance()
+
+{
+
+       public static void main(String[] args)
+
+       {
+
+              Sugar su = new Sugar();
+
+              su.price();
+
+       }
+
+       }
+
+*
+1 point
+a. Sweet=$10 Sugar=$20
+b. Sweet=$10 Sugar=$10
+c. Sweet=$20 Sugar=$20
+d. compile error
+Q. 29. What is output of the java code snippet
+
+public class Test {
+
+ 
+
+       public static void main(String[] args) {
+
+              int i = 0;
+
+              for(i=1;i<=6;i++)
+
+              {
+
+                     if(i%3==0)
+
+                           continue;
+
+                     System.out.println(i+",");
+
+              }
+
+       }
+
+ 
+
+}
+
+ 
+
+*
+1 point
+a. 1, 2
+b. 1, 2, 4, 5
+c. 3, 6
+d. compile time error
+Q. 20. What is output of the java program
+
+public class Test
+
+{
+
+   public static void main(String args [ ])
+
+   {
+
+          int localVariable;
+
+         System.out.println(localVariable);
+
+    }
+
+}
+
+*
+1 point
+a. 0
+b. Garbage value
+c. NullPointerException
+d. Compile time error
+1
+Q. 33. The special method that is called automatically when an object of a class is created is
+
+*
+1 point
+a. Finalizers
+b. Constructors
+c. desrtuctors
+d. none of the above
+Q. 44. When overloading does not occur
+
+*
+1 point
+a. More than one method with same name but different number or type of parameters
+b. More than one method with same name but different number parameter
+c. More than one method with same name,  same number parameter but different type
+d. More than one method with same name, same number parameter and same type of parameter
+Q. 34. The method used to String to Integer primitive data types
+
+*
+1 point
+a. parseInteger()
+b. stringof()
+c. valuesof()
+d. none of the above
+Q. 40. Constructor can call another overloaded constructor using the ___ keyword in java.
+
+*
+1 point
+a. super
+b. local
+c. con
+d. this
+Q. 3. What is the ouput of the below program
+
+public class Test
+
+{
+
+         void Test()
+
+    {
+
+          System.out.println(“Cdac”);
+
+    }
+
+          Test()
+
+    {
+
+       System.out.println(“Acts”);
+
+     }
+
+public static void main(String[] args)
+
+{
+
+   Test ts = new Test();
+
+}
+
+
+}
+
+*
+1 point
+a. Acts
+b. Cdac
+c. No output
+d. compile time error
+Q. 11. Which of the following can not be used as variable name in java
+
+*
+1 point
+a. identifier
+b. keyword
+c. identifier  & keyword
+d. none of the mentioned
+Q. 50. Choose incorrect statement
+
+*
+1 point
+a. Strings are immutable in java
+b. StringBuffer and StringBuilder are mutable. StringBuffer is synchronized, meaning its methods are thread-safe and can be safely used in a multithreaded environment.
+c. StringBuffer and StringBuilder are mutable. StringBuilder is not synchronized, which makes it faster than StringBuffer, but it is not thread-safe and should not be used in a multithreaded environment
+d. StringBuffer and StringBuilder are mutable. StringBuffer is synchronized, meaning its methods are not thread-safe and can be safely used in a multithreaded environment. On the other hand, StringBuilder is not synchronized, which makes it faster than StringBuffer, but it is thread-safe and should not be used in a multithreaded environment
+Q. 8. Which of the following keyword is used to explicitely raise an exception?
+
+public class Test{
+
+       public static void main(String args[])
+
+       {
+
+              try
+
+              {
+
+                     System.out.println("A");
+
+              throw new NullPointerException("Hello");
+
+              }
+
+       catch (ArithmeticException e)
+
+       {
+
+              System.out.println("B");
+
+       }
+
+       }
+
+}
+
+*
+1 point
+a. A
+b. B
+c. Hello
+d. A NullPointerException
+Page 1 of 1
+Never submit passwords through Google Forms.
+This content is neither created nor endorsed by Google. - Contact form owner - Terms of Service - Privacy Policy
+Does this form look suspicious? Report
+
+Google Forms
